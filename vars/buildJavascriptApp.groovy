@@ -7,7 +7,7 @@ def call(Map config=[:], Closure body) {
         stage("Test") {
             sh "npm test"
         }
-        stage("Deploy") {
+        stage("UploadArtifactNexus") {
             if (config.deploy) {
                 sh "npm publish"
             }
